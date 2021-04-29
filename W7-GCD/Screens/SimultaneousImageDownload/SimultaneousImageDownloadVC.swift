@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SimultaneousImageDownloadVC: UIViewController {
     @IBOutlet weak var imageTableView: UITableView!
     let identifier = "MyTableViewCell"
-    var viewModel = HomeViewModel()
+    var viewModel = SimultaneousImageDownloadViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension SimultaneousImageDownloadVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.arrayUrlImage.count
     }
@@ -33,22 +33,14 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? MyTableViewCell else { return UITableViewCell() }
         let imageURL = viewModel.arrayUrlImage[indexPath.row]
-        cell.myImageView.image = #imageLiteral(resourceName: "empty")
+        let index = indexPath.row
         cell.tag = indexPath.row
-        DispatchQueue.global(qos: .default).async {
-            if let data = try? Data(contentsOf: URL(string: imageURL)!){
-                DispatchQueue.main.async {
-                    if cell.tag == indexPath.row{
-                        cell.myImageView.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
+        cell.configure(urlString: imageURL, index: index)
         return cell
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension SimultaneousImageDownloadVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }

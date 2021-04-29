@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Simultaneous Image DownloadVC-->
         <scene sceneID="b4Y-17-Uvq">
             <objects>
-                <viewController storyboardIdentifier="HomeView" id="Fy7-6y-XIk" customClass="HomeViewController" customModule="W7_GCD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimultaneousImageDownloadView" id="Fy7-6y-XIk" customClass="SimultaneousImageDownloadVC" customModule="W7_GCD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2q-Zh-jvk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

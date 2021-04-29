@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dHN-Ai-5CK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VhE-tS-d7q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -30,15 +30,25 @@
                                     <action selector="openScreenExerciseTwo:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="STo-G1-Fds"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-nc-xDV">
+                                <rect key="frame" x="50" y="580" width="314" height="30"/>
+                                <state key="normal" title="Exercise Three"/>
+                                <connections>
+                                    <action selector="openScreenExerciseThree:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="t2j-pE-2Ff"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yuI-ng-Bdr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yvj-3o-9a3" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="37h-8F-a2s"/>
                             <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="9Tc-0b-en1" secondAttribute="trailing" constant="50" id="3lN-9d-BnS"/>
+                            <constraint firstItem="iFZ-nc-xDV" firstAttribute="top" secondItem="yvj-3o-9a3" secondAttribute="bottom" constant="30" id="9ha-VD-gbW"/>
                             <constraint firstItem="9Tc-0b-en1" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="UXo-Ex-x3Y"/>
                             <constraint firstItem="yvj-3o-9a3" firstAttribute="top" secondItem="9Tc-0b-en1" secondAttribute="bottom" constant="30" id="WQI-J6-kLl"/>
+                            <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="iFZ-nc-xDV" secondAttribute="trailing" constant="50" id="ZHu-hA-OSi"/>
                             <constraint firstItem="9Tc-0b-en1" firstAttribute="centerY" secondItem="yuI-ng-Bdr" secondAttribute="centerY" id="cNa-wy-4ID"/>
+                            <constraint firstItem="iFZ-nc-xDV" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="cdU-rz-hAi"/>
                             <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="yvj-3o-9a3" secondAttribute="trailing" constant="50" id="syq-hI-mnR"/>
                         </constraints>
                     </view>
@@ -46,25 +56,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sww-de-l26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="152.67857142857142"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="152.67857142857142"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="856-AR-WfJ">
+        <scene sceneID="lwu-RU-y5w">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dHN-Ai-5CK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VhE-tS-d7q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RTX-cE-bxe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yza-7s-aqs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rs3-qa-WnZ" kind="relationship" relationship="rootViewController" id="trd-sn-VK6"/>
+                        <segue destination="rs3-qa-WnZ" kind="relationship" relationship="rootViewController" id="g0S-eD-nkQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mu-Y7-EqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXk-jO-dRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="152.67857142857142"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="152.67857142857142"/>
         </scene>
     </scenes>
     <resources>
