@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,40 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-0b-en1">
-                                <rect key="frame" x="50" y="460" width="314" height="30"/>
-                                <state key="normal" title="Exercise One"/>
-                                <connections>
-                                    <action selector="openScreenExerciseOne:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="aZg-q5-GEB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-3o-9a3">
-                                <rect key="frame" x="50" y="520" width="314" height="30"/>
-                                <state key="normal" title="Exercise Two"/>
-                                <connections>
-                                    <action selector="openScreenExerciseTwo:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="STo-G1-Fds"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-nc-xDV">
-                                <rect key="frame" x="50" y="580" width="314" height="30"/>
-                                <state key="normal" title="Exercise Three"/>
-                                <connections>
-                                    <action selector="openScreenExerciseThree:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="t2j-pE-2Ff"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-ZU-Sds">
+                                <rect key="frame" x="156.5" y="420" width="101" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-0b-en1">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <state key="normal" title="Exercise One">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openScreenExerciseOne:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="aZg-q5-GEB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-3o-9a3">
+                                        <rect key="frame" x="0.0" y="40" width="101" height="30"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <state key="normal" title="Exercise Two">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openScreenExerciseTwo:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="STo-G1-Fds"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-nc-xDV">
+                                        <rect key="frame" x="0.0" y="80" width="101" height="30"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <state key="normal" title="Exercise Three">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openScreenExerciseThree:" destination="rs3-qa-WnZ" eventType="touchUpInside" id="t2j-pE-2Ff"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yuI-ng-Bdr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yvj-3o-9a3" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="37h-8F-a2s"/>
-                            <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="9Tc-0b-en1" secondAttribute="trailing" constant="50" id="3lN-9d-BnS"/>
-                            <constraint firstItem="iFZ-nc-xDV" firstAttribute="top" secondItem="yvj-3o-9a3" secondAttribute="bottom" constant="30" id="9ha-VD-gbW"/>
-                            <constraint firstItem="9Tc-0b-en1" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="UXo-Ex-x3Y"/>
-                            <constraint firstItem="yvj-3o-9a3" firstAttribute="top" secondItem="9Tc-0b-en1" secondAttribute="bottom" constant="30" id="WQI-J6-kLl"/>
-                            <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="iFZ-nc-xDV" secondAttribute="trailing" constant="50" id="ZHu-hA-OSi"/>
-                            <constraint firstItem="9Tc-0b-en1" firstAttribute="centerY" secondItem="yuI-ng-Bdr" secondAttribute="centerY" id="cNa-wy-4ID"/>
-                            <constraint firstItem="iFZ-nc-xDV" firstAttribute="leading" secondItem="yuI-ng-Bdr" secondAttribute="leading" constant="50" id="cdU-rz-hAi"/>
-                            <constraint firstItem="yuI-ng-Bdr" firstAttribute="trailing" secondItem="yvj-3o-9a3" secondAttribute="trailing" constant="50" id="syq-hI-mnR"/>
+                            <constraint firstItem="qfx-ZU-Sds" firstAttribute="centerY" secondItem="yuI-ng-Bdr" secondAttribute="centerY" id="PyA-8Q-OpJ"/>
+                            <constraint firstItem="qfx-ZU-Sds" firstAttribute="centerX" secondItem="yuI-ng-Bdr" secondAttribute="centerX" id="mkJ-qM-6XR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DPq-Sa-1Yd"/>
@@ -78,6 +86,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

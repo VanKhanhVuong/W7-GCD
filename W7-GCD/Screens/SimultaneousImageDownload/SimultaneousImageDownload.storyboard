@@ -17,27 +17,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8s6-S7-bnz">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Fy7-6y-XIk" id="qDE-hr-fyB"/>
                                     <outlet property="delegate" destination="Fy7-6y-XIk" id="WcV-9I-Jux"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnl-7R-al9">
-                                <rect key="frame" x="276" y="44" width="138" height="30"/>
-                                <state key="normal" title="Bai 2"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6j6-4v-QLF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8s6-S7-bnz" firstAttribute="top" secondItem="lnl-7R-al9" secondAttribute="bottom" id="3BL-rk-1zg"/>
-                            <constraint firstItem="6j6-4v-QLF" firstAttribute="trailing" secondItem="lnl-7R-al9" secondAttribute="trailing" id="4nB-NG-le1"/>
                             <constraint firstItem="6j6-4v-QLF" firstAttribute="trailing" secondItem="8s6-S7-bnz" secondAttribute="trailing" id="5b1-Rq-Aw1"/>
-                            <constraint firstItem="lnl-7R-al9" firstAttribute="width" secondItem="l2q-Zh-jvk" secondAttribute="width" multiplier="1/3" id="Qci-0W-52A"/>
                             <constraint firstItem="6j6-4v-QLF" firstAttribute="bottom" secondItem="8s6-S7-bnz" secondAttribute="bottom" id="i29-HX-dGE"/>
-                            <constraint firstItem="lnl-7R-al9" firstAttribute="top" secondItem="6j6-4v-QLF" secondAttribute="top" id="ilb-6F-gqf"/>
+                            <constraint firstItem="8s6-S7-bnz" firstAttribute="top" secondItem="6j6-4v-QLF" secondAttribute="top" id="sSA-ba-gV3"/>
                             <constraint firstItem="8s6-S7-bnz" firstAttribute="leading" secondItem="6j6-4v-QLF" secondAttribute="leading" id="sbr-fL-sAD"/>
                         </constraints>
                     </view>
@@ -47,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKV-rZ-N4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="165"/>
+            <point key="canvasLocation" x="131.8840579710145" y="164.73214285714286"/>
         </scene>
     </scenes>
     <resources>

@@ -8,20 +8,41 @@
 import UIKit
 
 class ReadJSONViewController: UIViewController {
+    @IBOutlet weak var optionSwitch: UISwitch!
     @IBOutlet weak var studentTableView: UITableView!
-    let identifier = "StudentTableViewCell"
     var viewModel = ReadJSONViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
     
     func setUpView() {
-        let nib = UINib(nibName: identifier, bundle: nil)
-        studentTableView.register(nib, forCellReuseIdentifier: identifier)
+        studentTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.identifier())
         studentTableView.dataSource = self
         viewModel.delegate = self
-        viewModel.getDataFromApi()
+        optionSwitch.isOn = true
+        viewModel.getDataFromLocal()
+    }
+    
+    @IBAction func switchDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            showAlert(message:
+                "Get data from local")
+            viewModel.arrayStudent = []
+            viewModel.getDataFromLocal()
+        } else {
+            showAlert(message:
+                "Get data from Internet")
+            viewModel.arrayStudent = []
+            viewModel.getDataFromApi()
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Message !!!", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -31,15 +52,9 @@ extension ReadJSONViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? StudentTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: StudentTableViewCell.identifier(), for: indexPath) as? StudentTableViewCell else { return UITableViewCell() }
         let item = viewModel.arrayStudent[indexPath.row]
-        cell.configure(item: item)
-        if item.avatar == nil {
-            cell.studentImageView.image = #imageLiteral(resourceName: "empty")
-        } else {
-            guard let avartar = item.avatar else { return UITableViewCell() }
-            cell.showAvatar(urlItem: avartar )
-        }
+        cell.configure(item: item, index: indexPath.row)
         return cell
     }
    

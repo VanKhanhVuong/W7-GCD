@@ -17,26 +17,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8wk-JO-GWz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="782"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get image from Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzG-5S-bKk">
+                                <rect key="frame" x="199.5" y="49" width="162.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPv-yp-Xy9">
+                                <rect key="frame" x="367" y="44" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="2Um-iS-avX"/>
+                                    <constraint firstAttribute="height" constant="31" id="NTm-XZ-3jl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="switchDidChange:" destination="Zs0-mW-pTs" eventType="valueChanged" id="Rf0-Wm-46S"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3fO-Cr-Xee"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3fO-Cr-Xee" firstAttribute="trailing" secondItem="tPv-yp-Xy9" secondAttribute="trailing" id="4H0-Ve-CJk"/>
+                            <constraint firstItem="tPv-yp-Xy9" firstAttribute="leading" secondItem="bzG-5S-bKk" secondAttribute="trailing" constant="5" id="72R-cl-RJY"/>
                             <constraint firstItem="3fO-Cr-Xee" firstAttribute="trailing" secondItem="8wk-JO-GWz" secondAttribute="trailing" id="7dS-jx-0Ib"/>
-                            <constraint firstItem="8wk-JO-GWz" firstAttribute="top" secondItem="3fO-Cr-Xee" secondAttribute="top" id="IVX-ae-3be"/>
+                            <constraint firstItem="bzG-5S-bKk" firstAttribute="centerY" secondItem="tPv-yp-Xy9" secondAttribute="centerY" id="BPN-oN-eOc"/>
+                            <constraint firstItem="8wk-JO-GWz" firstAttribute="top" secondItem="tPv-yp-Xy9" secondAttribute="bottom" constant="5" id="ZfI-CN-344"/>
+                            <constraint firstItem="tPv-yp-Xy9" firstAttribute="top" secondItem="3fO-Cr-Xee" secondAttribute="top" id="he4-CY-D1i"/>
                             <constraint firstItem="3fO-Cr-Xee" firstAttribute="bottom" secondItem="8wk-JO-GWz" secondAttribute="bottom" id="mtP-SC-f39"/>
                             <constraint firstItem="8wk-JO-GWz" firstAttribute="leading" secondItem="3fO-Cr-Xee" secondAttribute="leading" id="nPm-mZ-jcC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="optionSwitch" destination="tPv-yp-Xy9" id="hbz-rS-bWY"/>
                         <outlet property="studentTableView" destination="8wk-JO-GWz" id="uWk-1L-XFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bv-iH-90w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="151"/>
+            <point key="canvasLocation" x="21.739130434782609" y="150.66964285714286"/>
         </scene>
     </scenes>
     <resources>

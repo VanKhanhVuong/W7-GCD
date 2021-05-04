@@ -5,9 +5,10 @@
 //  Created by Văn Khánh Vương on 26/04/2021.
 //
 
-import UIKit
+import Foundation
+
 protocol SerialImageDownloadViewModelEvents: class {
-    func gotData(image:UIImage)
+    func gotData(image: Data)
     func gotError(message: String)
 }
 
@@ -36,21 +37,26 @@ class SerialImageDownloadViewModel {
                                    "https://images.unsplash.com/photo-1569389397653-c04fe624e663?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"]
     
     func getUrlImageForArray() {
-        DispatchQueue.global(qos: .default).async {
-            for i in 0..<self.arrayUrlImage.count {
-                guard let thumbnailUrl = URL(string: self.arrayUrlImage[i]) else {
+        DispatchQueue.global(qos: .background).async {
+            for imageString in self.arrayUrlImage {
+                guard let thumbnailUrl = URL(string: imageString) else {
                     continue
                 }
                 let group = DispatchGroup()
                 print(thumbnailUrl)
                 print("-------- GROUP ENTER ----------")
                 group.enter()
-                URLSession.shared.dataTask(with: thumbnailUrl, completionHandler: { data, response, error in
+                URLSession.shared.dataTask(with: thumbnailUrl) { data, response, error in
                     print(response?.suggestedFilename ?? thumbnailUrl.lastPathComponent)
-                    if let imaData = data {
+                    if let imgData = data {
                         DispatchQueue.main.async {
-                            guard let image: UIImage = UIImage(data: imaData) else { return }
-                            self.delegate?.gotData(image: image)
+                            if !imgData.isEmpty {
+                                self.delegate?.gotData(image: imgData)
+                            } else {
+                                if let error = error {
+                                    self.delegate?.gotError(message: "\(error)")
+                                }
+                            }
                         }
                     } else {
                         if let error = error {
@@ -58,7 +64,7 @@ class SerialImageDownloadViewModel {
                         }
                     }
                     group.leave()
-                }).resume()
+                }.resume()
                 group.wait()
             }
         }

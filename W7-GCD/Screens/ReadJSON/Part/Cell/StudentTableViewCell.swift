@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class StudentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
@@ -17,20 +16,24 @@ class StudentTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configure(item: StudentItem) {
+    static func identifier() -> String {
+        return String(describing: self)
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: self.identifier(), bundle: nil)
+    }
+    
+    func configure(item: StudentItem, index: Int) {
         self.nameLabel.text = item.info?.name
         self.birthdayLabel.text = item.info?.birthday
         self.studentIdLabel.text = item.studentId
-    }
-    
-    func showAvatar(urlItem : String) {
-        guard let url = URL(string: urlItem) else { return }
-        DispatchQueue.global(qos: .default).async {
-            if let data = try? Data(contentsOf: url){
-                DispatchQueue.main.async {
-                    self.studentImageView.image = UIImage(data: data)
-                }
-            }
+        if item.avatar == "" || item.avatar == nil {
+            self.studentImageView.image = #imageLiteral(resourceName: "empty")
+        } else {
+            studentImageView.getImage(urlString: item.avatar ?? "", index:index)
         }
     }
 }
+
+

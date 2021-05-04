@@ -6,31 +6,22 @@
 //
 
 import UIKit
-let imageCache = NSCache<AnyObject, AnyObject>()
 class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var myImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    static func identifier() -> String {
+        return String(describing: self)
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: self.identifier(), bundle: nil)
+    }
+    
     func configure(urlString: String, index: Int) {
-        if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
-            myImageView.image = imageFromCache
-            return
-        }
-        self.myImageView.image = #imageLiteral(resourceName: "empty")
-        DispatchQueue.global(qos: .default).async {
-            guard let url = URL(string: urlString) else { return }
-            if let data = try? Data(contentsOf: url){
-                DispatchQueue.main.async {
-                    guard let imageToCache = UIImage(data: data) else { return }
-                    if self.tag == index{
-                        self.myImageView.image = imageToCache
-                    }
-                    imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
-                }
-            }
-        }
+        myImageView.getImage(urlString: urlString, index: index)
     }
 }
 

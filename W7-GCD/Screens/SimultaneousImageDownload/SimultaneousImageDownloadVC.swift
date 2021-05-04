@@ -9,7 +9,6 @@ import UIKit
 
 class SimultaneousImageDownloadVC: UIViewController {
     @IBOutlet weak var imageTableView: UITableView!
-    let identifier = "MyTableViewCell"
     var viewModel = SimultaneousImageDownloadViewModel()
 
     override func viewDidLoad() {
@@ -18,8 +17,7 @@ class SimultaneousImageDownloadVC: UIViewController {
     }
 
     func setUpView() {
-        let nib = UINib(nibName: identifier, bundle: nil)
-        imageTableView.register(nib, forCellReuseIdentifier: identifier)
+        imageTableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier())
         imageTableView.dataSource = self
         imageTableView.delegate = self
     }
@@ -31,11 +29,9 @@ extension SimultaneousImageDownloadVC: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? MyTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier(), for: indexPath) as? MyTableViewCell else { return UITableViewCell() }
         let imageURL = viewModel.arrayUrlImage[indexPath.row]
-        let index = indexPath.row
-        cell.tag = indexPath.row
-        cell.configure(urlString: imageURL, index: index)
+        cell.configure(urlString: imageURL, index: indexPath.row)
         return cell
     }
 }

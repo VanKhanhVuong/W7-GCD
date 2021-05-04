@@ -37,27 +37,16 @@ struct ErrorItem: Decodable {
 
 extension StudentItem {
     init?(json: [String:Any]) {
-        guard let avatar = json["avatar"] as? String,
-              let info = json["info"] as? InfoItem,
-              let studentId = json["student_id"] as? String
-        else {
-            return nil
-        }
-        self.avatar = avatar
-        self.info = info
-        self.studentId = studentId
+        self.avatar = json["avatar"] as? String ?? ""
+        self.info = InfoItem(json: json["info"] as? [String:Any] ?? [:])
+        self.studentId = json["student_id"] as? String ?? ""
     }
 }
 
 extension InfoItem {
     init?(json: [String:Any]) {
-        guard let name = json["name"] as? String,
-              let birthday = json["birthday"] as? String
-        else {
-            return nil
-        }
-        self.name = name
-        self.birthday = birthday
+        self.name = json["name"] as? String ?? ""
+        self.birthday = json["birthday"] as? String ?? ""
     }
 }
 
