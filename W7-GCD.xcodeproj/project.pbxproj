@@ -21,7 +21,7 @@
 		6608BA382636C96F002CDF5F /* SerialImageDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608BA372636C96F002CDF5F /* SerialImageDownloadVC.swift */; };
 		6608BA3C2636C997002CDF5F /* SerialImageDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6608BA3B2636C997002CDF5F /* SerialImageDownload.storyboard */; };
 		6608BA3F2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608BA3E2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift */; };
-		66222607263A95BC00DF6C1F /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 66222606263A95BC00DF6C1F /* test.json */; };
+		66253C6326410DB8007F8F6B /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 66253C6226410DB8007F8F6B /* test.json */; };
 		66DEBD32263CEEA200A31A91 /* UIImageView+cacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DEBD31263CEEA200A31A91 /* UIImageView+cacheImage.swift */; };
 		66E4724F263943C500ECFC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4724D263943C500ECFC43 /* MainViewController.swift */; };
 		66E472552639462900ECFC43 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E472542639462900ECFC43 /* MainView.storyboard */; };
@@ -50,7 +50,7 @@
 		6608BA372636C96F002CDF5F /* SerialImageDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialImageDownloadVC.swift; sourceTree = "<group>"; };
 		6608BA3B2636C997002CDF5F /* SerialImageDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SerialImageDownload.storyboard; sourceTree = "<group>"; };
 		6608BA3E2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialImageDownloadViewModel.swift; sourceTree = "<group>"; };
-		66222606263A95BC00DF6C1F /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = ../../../../test.json; sourceTree = "<group>"; };
+		66253C6226410DB8007F8F6B /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		66DEBD31263CEEA200A31A91 /* UIImageView+cacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+cacheImage.swift"; sourceTree = "<group>"; };
 		66E4724D263943C500ECFC43 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66E472542639462900ECFC43 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				6608BA1726366F2C002CDF5F /* APIService.swift */,
-				66222606263A95BC00DF6C1F /* test.json */,
+				66253C6226410DB8007F8F6B /* test.json */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -313,8 +313,8 @@
 				6608B9F126366AAC002CDF5F /* LaunchScreen.storyboard in Resources */,
 				6608B9EE26366AAC002CDF5F /* Assets.xcassets in Resources */,
 				66E472552639462900ECFC43 /* MainView.storyboard in Resources */,
+				66253C6326410DB8007F8F6B /* test.json in Resources */,
 				66E472602639507700ECFC43 /* ReadJSON.storyboard in Resources */,
-				66222607263A95BC00DF6C1F /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

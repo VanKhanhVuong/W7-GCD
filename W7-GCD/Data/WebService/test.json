@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "errors": [
+    {
+      "message": "-",
+      "code": "-"
+    }
+  ],
+  "data": [
+    {
+      "info": {
+        "birthday": "01/01/2011",
+        "name": "Nguyen Van A Local"
+      },
+      "student_id": "S01",
+      "avatar": "https://png.pngtree.com/png-vector/20190909/ourmid/pngtree-outline-user-icon-png-image_1727916.jpg"
+    },
+    {
+      "info": {
+        "birthday": "02/02/2012",
+        "name": "Nguyen Van B Local"
+      },
+      "student_id": "S02",
+      "avatar": "https://png.pngtree.com/png-vector/20190909/ourmid/pngtree-outline-user-icon-png-image_1727916.jpg"
+    },
+    {
+      "info": {
+        "birthday": "03/03/2013",
+        "name": "Nguyen Van C Local"
+      },
+      "student_id": "S01",
+      "avatar": null
+    },
+    {
+      "info": {
+        "birthday": "04/04/2014",
+        "name": "Nguyen Van D Local"
+      },
+      "student_id": "S01",
+      "avatar": "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png"
+    }
+  ]
+}
+
