@@ -13,11 +13,12 @@ protocol ReadJSONViewModelEvents: class {
 
 class ReadJSONViewModel {
     weak var delegate: ReadJSONViewModelEvents?
-    var apiService = APIService()
+    private var apiService = APIService()
+    private var apiServiceLocal = APIServiceLocal()
     var arrayStudent: [StudentItem] = []
     
     func getDataFromLocal() {
-        apiService.getDataJsonLocal{ [weak self] result in
+        apiServiceLocal.getDataJsonLocal{ [weak self] result in
             guard let self = self else { return }
             if !result.isEmpty {
                 result.forEach { (student) in

@@ -16,7 +16,7 @@ extension UIImageView {
         }
         guard let url = URL(string: urlString) else { return }
         let tagImage: Int = index
-        self.image = #imageLiteral(resourceName: "empty")
+        self.image = UIImage(named: "empty")
         DispatchQueue.global(qos: .background).async {
             if let data = try? Data(contentsOf: url){
                 DispatchQueue.main.async {

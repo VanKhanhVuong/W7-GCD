@@ -36,15 +36,15 @@ struct ErrorItem: Decodable {
 }
 
 extension StudentItem {
-    init?(json: [String:Any]) {
+    init?(json: [String: Any]) {
         self.avatar = json["avatar"] as? String ?? ""
-        self.info = InfoItem(json: json["info"] as? [String:Any] ?? [:])
+        self.info = InfoItem(json: json["info"] as? [String: Any] ?? [:])
         self.studentId = json["student_id"] as? String ?? ""
     }
 }
 
 extension InfoItem {
-    init?(json: [String:Any]) {
+    init?(json: [String: Any]) {
         self.name = json["name"] as? String ?? ""
         self.birthday = json["birthday"] as? String ?? ""
     }

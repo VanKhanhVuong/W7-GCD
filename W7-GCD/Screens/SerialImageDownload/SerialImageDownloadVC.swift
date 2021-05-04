@@ -9,8 +9,8 @@ import UIKit
 
 class SerialImageDownloadVC: UIViewController {
     @IBOutlet weak var imageScrollView: UIScrollView!
-    var viewModel = SerialImageDownloadViewModel()
-    var imageCurrentSize: CGFloat = 0.0
+    private var viewModel = SerialImageDownloadViewModel()
+    private var imageCurrentSize: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class SerialImageDownloadVC: UIViewController {
         viewModel.getUrlImageForArray()
     }
     
-    func showImage(imageData: Data) {
+    private func showImage(imageData: Data) {
         // Init imageView
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -43,7 +43,7 @@ class SerialImageDownloadVC: UIViewController {
             imageScrollView.addSubview(imageView)
             imageScrollView.contentSize = CGSize(width: self.view.frame.width, height: imageScrollView.contentSize.height + 5 + imageView.frame.height)
         } else {
-            imageView.image = #imageLiteral(resourceName: "empty")
+            imageView.image = UIImage(named: "empty")
         }
         
     }

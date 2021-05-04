@@ -9,14 +9,14 @@ import UIKit
 
 class SimultaneousImageDownloadVC: UIViewController {
     @IBOutlet weak var imageTableView: UITableView!
-    var viewModel = SimultaneousImageDownloadViewModel()
+    private var viewModel = SimultaneousImageDownloadViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
 
-    func setUpView() {
+    private func setUpView() {
         imageTableView.register(MyTableViewCell.nib(), forCellReuseIdentifier: MyTableViewCell.identifier())
         imageTableView.dataSource = self
         imageTableView.delegate = self

@@ -27,24 +27,5 @@ struct APIService {
             }
         }.resume()
     }
-    
-    func getDataJsonLocal(completion: @escaping ([StudentItem]) -> ()) {
-        if let path = Bundle.main.path(forResource: "test", ofType: "json") {
-            do {
-                var arrayStudent:[StudentItem] = []
-                let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    for case let result in json["data"] as! [Any] {
-                        if let student = StudentItem(json:result as! [String : Any]) {
-                            arrayStudent.append(student)
-                        }
-                    }
-                    completion(arrayStudent)
-                }
-            } catch {
-                print(error)
-            }
-        }
-    }
 }
 

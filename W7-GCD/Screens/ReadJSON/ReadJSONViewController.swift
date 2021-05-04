@@ -10,14 +10,14 @@ import UIKit
 class ReadJSONViewController: UIViewController {
     @IBOutlet weak var optionSwitch: UISwitch!
     @IBOutlet weak var studentTableView: UITableView!
-    var viewModel = ReadJSONViewModel()
+    private var viewModel = ReadJSONViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
     
-    func setUpView() {
+    private func setUpView() {
         studentTableView.register(StudentTableViewCell.nib(), forCellReuseIdentifier: StudentTableViewCell.identifier())
         studentTableView.dataSource = self
         viewModel.delegate = self
@@ -26,20 +26,17 @@ class ReadJSONViewController: UIViewController {
     }
     
     @IBAction func switchDidChange(_ sender: UISwitch) {
+        viewModel.arrayStudent = [] 
         if sender.isOn {
-            showAlert(message:
-                "Get data from local")
-            viewModel.arrayStudent = []
+            showAlert(message: "Get data from local")
             viewModel.getDataFromLocal()
         } else {
-            showAlert(message:
-                "Get data from Internet")
-            viewModel.arrayStudent = []
+            showAlert(message: "Get data from Internet")
             viewModel.getDataFromApi()
         }
     }
     
-    func showAlert(message: String) {
+    private func showAlert(message: String) {
         let alert = UIAlertController(title: "Message !!!", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

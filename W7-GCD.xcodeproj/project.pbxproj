@@ -22,7 +22,8 @@
 		6608BA3C2636C997002CDF5F /* SerialImageDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6608BA3B2636C997002CDF5F /* SerialImageDownload.storyboard */; };
 		6608BA3F2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608BA3E2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift */; };
 		66253C6326410DB8007F8F6B /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 66253C6226410DB8007F8F6B /* test.json */; };
-		66DEBD32263CEEA200A31A91 /* UIImageView+cacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DEBD31263CEEA200A31A91 /* UIImageView+cacheImage.swift */; };
+		66D4B5E826412BBA003802EE /* APIServiceLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4B5E726412BBA003802EE /* APIServiceLocal.swift */; };
+		66DEBD32263CEEA200A31A91 /* UIImageView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DEBD31263CEEA200A31A91 /* UIImageView+Extention.swift */; };
 		66E4724F263943C500ECFC43 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4724D263943C500ECFC43 /* MainViewController.swift */; };
 		66E472552639462900ECFC43 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E472542639462900ECFC43 /* MainView.storyboard */; };
 		66E4725D2639506500ECFC43 /* ReadJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4725C2639506500ECFC43 /* ReadJSONViewController.swift */; };
@@ -30,7 +31,7 @@
 		66E472712639536B00ECFC43 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E4726F2639536B00ECFC43 /* StudentTableViewCell.swift */; };
 		66E472722639536B00ECFC43 /* StudentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E472702639536B00ECFC43 /* StudentTableViewCell.xib */; };
 		66E472752639574A00ECFC43 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E472742639574A00ECFC43 /* Student.swift */; };
-		66E4727A263960F300ECFC43 /* ReadJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E47279263960F300ECFC43 /* ReadJSONModel.swift */; };
+		66E4727A263960F300ECFC43 /* ReadJSONViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E47279263960F300ECFC43 /* ReadJSONViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,8 @@
 		6608BA3B2636C997002CDF5F /* SerialImageDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SerialImageDownload.storyboard; sourceTree = "<group>"; };
 		6608BA3E2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialImageDownloadViewModel.swift; sourceTree = "<group>"; };
 		66253C6226410DB8007F8F6B /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		66DEBD31263CEEA200A31A91 /* UIImageView+cacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+cacheImage.swift"; sourceTree = "<group>"; };
+		66D4B5E726412BBA003802EE /* APIServiceLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceLocal.swift; sourceTree = "<group>"; };
+		66DEBD31263CEEA200A31A91 /* UIImageView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extention.swift"; sourceTree = "<group>"; };
 		66E4724D263943C500ECFC43 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66E472542639462900ECFC43 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		66E4725C2639506500ECFC43 /* ReadJSONViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		66E4726F2639536B00ECFC43 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		66E472702639536B00ECFC43 /* StudentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentTableViewCell.xib; sourceTree = "<group>"; };
 		66E472742639574A00ECFC43 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		66E47279263960F300ECFC43 /* ReadJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONModel.swift; sourceTree = "<group>"; };
+		66E47279263960F300ECFC43 /* ReadJSONViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		6608B9FB26366AE9002CDF5F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				66D4B5E626412AE9003802EE /* LocalService */,
 				6608B9FC26366AF0002CDF5F /* WebService */,
 				6608B9FA26366AE2002CDF5F /* Model */,
 			);
@@ -126,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				6608BA1726366F2C002CDF5F /* APIService.swift */,
-				66253C6226410DB8007F8F6B /* test.json */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -183,7 +185,7 @@
 		66A6873B263A5F02002E5945 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				66E47279263960F300ECFC43 /* ReadJSONModel.swift */,
+				66E47279263960F300ECFC43 /* ReadJSONViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,10 +206,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		66D4B5E626412AE9003802EE /* LocalService */ = {
+			isa = PBXGroup;
+			children = (
+				66253C6226410DB8007F8F6B /* test.json */,
+				66D4B5E726412BBA003802EE /* APIServiceLocal.swift */,
+			);
+			path = LocalService;
+			sourceTree = "<group>";
+		};
 		66DEBD30263CEE2500A31A91 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				66DEBD31263CEEA200A31A91 /* UIImageView+cacheImage.swift */,
+				66DEBD31263CEEA200A31A91 /* UIImageView+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -331,13 +342,14 @@
 				6608BA1C263671E5002CDF5F /* SimultaneousImageDownloadViewModel.swift in Sources */,
 				66E4724F263943C500ECFC43 /* MainViewController.swift in Sources */,
 				6608B9E726366AAB002CDF5F /* SceneDelegate.swift in Sources */,
+				66D4B5E826412BBA003802EE /* APIServiceLocal.swift in Sources */,
 				6608BA0026366B27002CDF5F /* SimultaneousImageDownloadVC.swift in Sources */,
-				66E4727A263960F300ECFC43 /* ReadJSONModel.swift in Sources */,
+				66E4727A263960F300ECFC43 /* ReadJSONViewModel.swift in Sources */,
 				66E472752639574A00ECFC43 /* Student.swift in Sources */,
 				6608BA1826366F2C002CDF5F /* APIService.swift in Sources */,
 				6608BA382636C96F002CDF5F /* SerialImageDownloadVC.swift in Sources */,
 				6608BA1526366EB0002CDF5F /* Image.swift in Sources */,
-				66DEBD32263CEEA200A31A91 /* UIImageView+cacheImage.swift in Sources */,
+				66DEBD32263CEEA200A31A91 /* UIImageView+Extention.swift in Sources */,
 				6608BA3F2636CAE4002CDF5F /* SerialImageDownloadViewModel.swift in Sources */,
 				66E472712639536B00ECFC43 /* StudentTableViewCell.swift in Sources */,
 			);

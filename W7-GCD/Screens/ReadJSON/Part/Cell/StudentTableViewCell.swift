@@ -29,9 +29,9 @@ class StudentTableViewCell: UITableViewCell {
         self.birthdayLabel.text = item.info?.birthday
         self.studentIdLabel.text = item.studentId
         if item.avatar == "" || item.avatar == nil {
-            self.studentImageView.image = #imageLiteral(resourceName: "empty")
+            self.studentImageView.image = UIImage(named: "empty")
         } else {
-            studentImageView.getImage(urlString: item.avatar ?? "", index:index)
+            studentImageView.getImage(urlString: item.avatar ?? "", index: index)
         }
     }
 }
